@@ -3,10 +3,9 @@ package com.jvrskt.cursomc.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.jvrskt.cursomc.domain.Categoria;
+import com.jvrskt.cursomc.domain.Produto;
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
+public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 
-	
 }
