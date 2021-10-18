@@ -2,7 +2,12 @@
 
 ## Apresentação
 Projeto BackEnd desenvolvido no curso de Spring Boot da instituição online de ensino Udemy, cujo as aulas são
-ministradas pelo professor Nelio Alves. Nesse projeto, além de ser uma estudo de caso sobre a implementação 
+ministradas pelo professor Nelio Alves. 
+Esse projeto, tem como intuito:
+- Gerar uma base de dados relacional automaticamente a partir do modelo conceitual, bem como 
+  povoar a base com a instância dada, 
+- Recuperar os dados e disponibilizá-los por meio de uma API Rest BÁSICA
+- Além de ser uma estudo de caso sobre a implementação 
 de um modelo conceitual, foi abordado boas práticas de Engenharia de Software tais como desenvolvimento 
 em camadas (camadas de domínio, acesso a dados, serviço e controladores)  e tratamento de exceções.
 
@@ -37,5 +42,14 @@ em linguagem orientada a objetos dos seguintes tópicos:
 
 ## Modelo Conceitual
 
-
+<img width="753" alt="modelo conceitual" src="https://user-images.githubusercontent.com/73432286/137800324-76f455ba-f5b5-4545-aa98-e151cb63b0a2.png">
  
+ 
+ ## Instâncias do modelo conceitual
+ 
+ <img width="742" alt="impl mc" src="https://user-images.githubusercontent.com/73432286/137800911-3d255348-1b15-40a6-b97e-d7fc35edb884.png">
+ 
+ 
+ 
+ ### Autor
+ - Jean Victor Rodrigues Ferreira
