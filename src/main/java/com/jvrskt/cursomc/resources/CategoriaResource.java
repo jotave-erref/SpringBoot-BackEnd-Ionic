@@ -54,7 +54,7 @@ public class CategoriaResource {
 	}
 	
 	@RequestMapping(value = "/{id}",  method = RequestMethod.DELETE)
-	public ResponseEntity<?> delete(@PathVariable  Integer id) {
+	public ResponseEntity<Categoria> delete(@PathVariable  Integer id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
@@ -66,8 +66,8 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(listDTO);
 	}
 	
-	@RequestMapping(value = "/pages", method = RequestMethod.GET)
-	public ResponseEntity<Page<CategoriaDTO>> finPage(
+	@RequestMapping(value = "/page", method = RequestMethod.GET)
+	public ResponseEntity<Page<CategoriaDTO>> findPage(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
 			@RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
