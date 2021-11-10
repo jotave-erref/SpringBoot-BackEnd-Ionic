@@ -1,4 +1,4 @@
-package com.jvrskt.cursomc.resources;
+	package com.jvrskt.cursomc.resources;
 
 import java.net.URI;
 import java.util.List;
