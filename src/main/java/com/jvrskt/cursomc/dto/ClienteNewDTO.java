@@ -2,6 +2,9 @@ package com.jvrskt.cursomc.dto;
 
 import java.io.Serializable;
 
+import com.jvrskt.cursomc.service.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
