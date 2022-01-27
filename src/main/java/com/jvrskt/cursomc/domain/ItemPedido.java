@@ -1,6 +1,9 @@
 package com.jvrskt.cursomc.domain;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 import javax.persistence.EmbeddedId;
@@ -102,4 +105,23 @@ public class ItemPedido implements Serializable{
 		ItemPedido other = (ItemPedido) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		NumberFormat nf = NumberFormat.getCurrencyInstance((new Locale("pt", "BR")));
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append(getProduto().getNome());
+		builder.append(", Qtde: ");
+		builder.append(getQuantidade());
+		builder.append(", Preço unitário: ");
+		builder.append(nf.format(getPreco()));
+		builder.append(", Subtotal: ");
+		builder.append(nf.format(getSubTotal()));
+		builder.append("\n");
+	
+		return builder.toString();
+	}
+	
 }
