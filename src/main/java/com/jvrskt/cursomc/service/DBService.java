@@ -20,6 +20,7 @@ import com.jvrskt.cursomc.domain.PagamentoCartao;
 import com.jvrskt.cursomc.domain.Pedido;
 import com.jvrskt.cursomc.domain.Produto;
 import com.jvrskt.cursomc.domain.enums.EstadoPagamento;
+import com.jvrskt.cursomc.domain.enums.Perfil;
 import com.jvrskt.cursomc.domain.enums.TipoCliente;
 import com.jvrskt.cursomc.repository.CategoriaRepository;
 import com.jvrskt.cursomc.repository.CidadeRepository;
@@ -126,16 +127,21 @@ SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		cidadeRepo.saveAll(Arrays.asList(c1, c2));
 		
 		Cliente cli1 = new Cliente(null, "Jean Victor", "jvrferreira96@gmail.com", " 4569871232", TipoCliente.PESSOAFISICA, pe.encode("123"));
+		cli1.getTelefones().addAll(Arrays.asList("33332222", "22223333"));		
 		
-		cli1.getTelefones().addAll(Arrays.asList("33332222", "22223333"));
+		Cliente cli2 = new Cliente(null, "Bruna Julliene", "brunajulliene@gmail.com", " 98843330098", TipoCliente.PESSOAFISICA, pe.encode("123"));
+		cli2.getTelefones().addAll(Arrays.asList("123321123", "321123321"));
+		cli2.addPerfil(Perfil.ADMIN);
 		
 		Endereco end1 = new Endereco(null, "Rua das areais", "22", "Praça das areias", "Campeche", "75783320", cli1, c2);
 		Endereco end2 = new Endereco(null, "Ruas das Flores", "33", "Apt 203", "Jardim", "45623218", cli1, c1);
+		Endereco end3 = new Endereco(null, "Rua da Solidão", "11", null, "Pantano do Sul", "45623218", cli2, c2);
 		
 		cli1.getEnderecos().addAll(Arrays.asList(end1, end2));
+		cli2.getEnderecos().addAll(Arrays.asList(end1, end2, end3));
 		
-		cliRepo.saveAll(Arrays.asList(cli1));
-		endRepo.saveAll(Arrays.asList(end1, end2));
+		cliRepo.saveAll(Arrays.asList(cli1, cli2));
+		endRepo.saveAll(Arrays.asList(end1, end2, end3));
 		
 		Pedido ped1 = new Pedido(null, sdf.parse("30/09/2017 10:32"), cli1, end1);
 		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 00:00"), cli1, end2);
